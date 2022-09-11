@@ -1,6 +1,8 @@
+# prettier的忽悠配置文件
 /dist/*
 .local
 .output.js
+*.md
 /node_modules/**
 
 **/*.svg

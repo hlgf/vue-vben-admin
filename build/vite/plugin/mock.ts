@@ -12,7 +12,6 @@ export function configMockPlugin(isBuild: boolean) {
     prodEnabled: isBuild,
     injectCode: `
       import { setupProdMockServer } from '../mock/_createProductionServer';
-
       setupProdMockServer();
       `,
   });

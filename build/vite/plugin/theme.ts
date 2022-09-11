@@ -2,6 +2,8 @@
  * Vite plugin for website theme color switching
  * https://github.com/anncwb/vite-plugin-theme
  */
+
+// 用于动态更改界面主题色的 vite 插件
 import type { PluginOption } from 'vite';
 import path from 'path';
 import {

@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+// 从.evn文件流Buffer中读取属性输出一个对象。
 import dotenv from 'dotenv';
 
 export function isDevFn(mode: string): boolean {
@@ -66,16 +67,22 @@ function getConfFiles() {
  */
 export function getEnvConfig(match = 'VITE_GLOB_', confFiles = getConfFiles()) {
   let envConfig = {};
+  // ↓循环文件名
   confFiles.forEach((item) => {
     try {
+      // ↓同步读取根目录下指定的文件，将读取的六传入dotenv输出对象
       const env = dotenv.parse(fs.readFileSync(path.resolve(process.cwd(), item)));
+      // ↓将新获取的对象追加到结果中，相同的覆盖
       envConfig = { ...envConfig, ...env };
-    } catch (e) {
+    } catch (error) {
       console.error(`Error in parsing ${item}`, e);
     }
   });
-  const reg = new RegExp(`^(${match})`);
+
+  // ↓检查输出结果
   Object.keys(envConfig).forEach((key) => {
+    // ↓如果不是以传入的match变量开的就直接删除
+    const reg = new RegExp(`^(${match})`);
     if (!reg.test(key)) {
       Reflect.deleteProperty(envConfig, key);
     }

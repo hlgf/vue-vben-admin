@@ -1,9 +1,11 @@
+// antd组件中组件大小
 export enum SizeEnum {
   DEFAULT = 'default',
   SMALL = 'small',
   LARGE = 'large',
 }
 
+// 这个数字没地方用
 export enum SizeNumberEnum {
   DEFAULT = 48,
   SMALL = 16,

@@ -1,3 +1,4 @@
+// 屏幕等级
 export enum sizeEnum {
   XS = 'XS',
   SM = 'SM',
@@ -7,6 +8,7 @@ export enum sizeEnum {
   XXL = 'XXL',
 }
 
+// 屏幕等级对应的像素
 export enum screenEnum {
   XS = 480,
   SM = 576,
@@ -16,6 +18,7 @@ export enum screenEnum {
   XXL = 1600,
 }
 
+// 屏幕等级像素Map
 const screenMap = new Map<sizeEnum, number>();
 
 screenMap.set(sizeEnum.XS, screenEnum.XS);
@@ -25,4 +28,5 @@ screenMap.set(sizeEnum.LG, screenEnum.LG);
 screenMap.set(sizeEnum.XL, screenEnum.XL);
 screenMap.set(sizeEnum.XXL, screenEnum.XXL);
 
+// 根据等级获取像素
 export { screenMap };

@@ -4,5 +4,5 @@
 
 [ -n "$CI" ] && exit 0
 
-# Format and submit code according to lintstagedrc.js configuration
+# lint-staged：在代码提交前对暂存区里的代码进行检测。
 npm run lint:lint-staged

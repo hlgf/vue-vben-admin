@@ -3,6 +3,7 @@
  * https://github.com/anncwb/vite-plugin-svg-icons
  */
 
+// 自动将所有svg图片加载到HTML中
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
 import path from 'path';
 

@@ -2,6 +2,8 @@
  *  Introduces component library styles on demand.
  * https://github.com/anncwb/vite-plugin-style-import
  */
+
+// 可按需导入组件库样式，由于 vite 本身已按需导入了组件库，因此仅样式不是按需导入的，因此只需按需导入样式即可。
 import { createStyleImportPlugin } from 'vite-plugin-style-import';
 
 export function configStyleImportPlugin(_isBuild: boolean) {

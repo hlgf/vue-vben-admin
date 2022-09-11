@@ -18,9 +18,15 @@ const scopeComplete = execSync('git status --porcelain || true')
   ?.replace(/s$/, '');
 
 /** @type {import('cz-git').UserConfig} */
+/* 
+npm install -g @commitlint/cli @commitlint/config-conventional
+*/
+
 module.exports = {
   ignores: [(commit) => commit.includes('init')],
+  // 使用commitlint/config-conventional规则
   extends: ['@commitlint/config-conventional'],
+  // 自定义规则
   rules: {
     'body-leading-blank': [2, 'always'],
     'footer-leading-blank': [1, 'always'],

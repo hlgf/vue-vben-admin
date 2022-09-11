@@ -1,6 +1,8 @@
 /**
  * Package file volume analysis
  */
+
+// 依赖分析插件
 import visualizer from 'rollup-plugin-visualizer';
 import { isReportMode } from '../../utils';
 

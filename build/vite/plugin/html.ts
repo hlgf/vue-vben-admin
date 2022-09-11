@@ -2,6 +2,14 @@
  * Plugin to minimize and use ejs template syntax in index.html.
  * https://github.com/anncwb/vite-plugin-html
  */
+
+/* 
+配置vite-plugin-htm
+一个为index.html提供minify和基于EJS模板功能的Vite插件。
+
+minify：压缩index.html代码。
+EJS：给index.html提供访问变量的能力。
+*/
 import type { PluginOption } from 'vite';
 import { createHtmlPlugin } from 'vite-plugin-html';
 import pkg from '../../../package.json';

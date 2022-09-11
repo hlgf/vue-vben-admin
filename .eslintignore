@@ -1,4 +1,4 @@
-
+# eslint的忽悠文件配置
 *.sh
 node_modules
 *.md
