@@ -40,7 +40,7 @@ interface PermissionState {
   // 菜单列表
   frontMenuList: Menu[];
 }
-
+// pinia可以创建多个stroe数据仓库
 export const usePermissionStore = defineStore({
   id: 'app-permission',
   state: (): PermissionState => ({

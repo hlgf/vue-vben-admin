@@ -15,6 +15,7 @@ function getKey(namespace: string | undefined, key: string) {
   if (!namespace) {
     return key;
   }
+  //  检测字符串是否以指定的前缀开始
   if (key.startsWith(namespace)) {
     return key;
   }

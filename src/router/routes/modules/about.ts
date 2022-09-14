@@ -11,6 +11,7 @@ const about: AppRouteModule = {
   meta: {
     hideChildrenInMenu: true,
     icon: 'simple-icons:about-dot-me',
+    // routes.dashboard.about 是一个对象,参考src\locales\lang\en\routes\dashboard.ts
     title: t('routes.dashboard.about'),
     orderNo: 100000,
   },

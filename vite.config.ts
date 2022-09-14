@@ -62,6 +62,8 @@ NODE_ENV的值后面的会覆盖前面的。 */
     },
     server: {
       https: true,
+      // 自动打开浏览器
+      open: true,
       // Listening on all local IPs
       host: true,
       port: VITE_PORT,

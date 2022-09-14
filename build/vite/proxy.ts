@@ -9,7 +9,7 @@ type ProxyItem = [string, string];
 // ↓方法接收的参数
 type ProxyList = ProxyItem[];
 
-// ↓Vite代理所接收对象类型
+// ↓Vite代理所接收对象类型,类型官方文档是有写明的
 type ProxyTargetList = Record<string, string | ProxyOptions>;
 
 // ↓https类型的URL的匹配正则
@@ -20,12 +20,14 @@ const httpsRE = /^https:\/\//;
  */
 export function createProxy(list: ProxyList = []) {
   const ret: ProxyTargetList = {};
+  // 解构二维数组
   for (const [prefix, target] of list) {
+    // 判断是不是https
     const isHttps = httpsRE.test(target);
-
+    // console.log('prefix', prefix, 'target', target);
     // https://github.com/http-party/node-http-proxy#options
     ret[prefix] = {
-      // ↓代理至的路径, // 如果 key 值以 ^ 开头，将会被解释为 RegExp
+      // ↓代理至的路径
       target: target,
       // ↓默认值：false-将主机标头的来源更改为目标URL
       changeOrigin: true,

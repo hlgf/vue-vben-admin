@@ -1,3 +1,4 @@
+//  这里面的文件在ts.config.ts中需要使用typeRoots属性配置进行文件夹的监听,自动导入声明文件
 declare interface Fn<T = any, R = T> {
   (...arg: T[]): R;
 }

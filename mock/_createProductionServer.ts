@@ -1,5 +1,6 @@
 import { createProdMockServer } from 'vite-plugin-mock/es/createProdMockServer';
 
+// vite的批量导入模块,类似于webpack的reuqire.context
 const modules = import.meta.globEager('./**/*.ts');
 
 const mockModules: any[] = [];

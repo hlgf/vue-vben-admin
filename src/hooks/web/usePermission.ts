@@ -67,6 +67,7 @@ export function usePermission() {
 
     if ([PermissionModeEnum.ROUTE_MAPPING, PermissionModeEnum.ROLE].includes(permMode)) {
       if (!isArray(value)) {
+        // 因为value有多个类型,而getRoleList需要的类型是RoleEnum,所以此处需要进行断言,告诉ts,默许为RoleRnum
         return userStore.getRoleList?.includes(value as RoleEnum);
       }
       return (intersection(value, userStore.getRoleList) as RoleEnum[]).length > 0;

@@ -10,9 +10,11 @@ import {
 import { CacheTypeEnum } from '/@/enums/cacheEnum';
 import { ThemeMode } from '../build/config/themeConfig';
 
+// type别名,可以充当一个对象的作用提供给ts的类型推断使用
 export type LocaleType = 'zh_CN' | 'en' | 'ru' | 'ja' | 'ko';
 
 export interface MenuSetting {
+  siderHidden: boolean;
   // 菜单背景颜色
   bgColor: string;
   // 菜单是否跟随内容滚动
@@ -56,6 +58,7 @@ export interface MenuSetting {
 }
 
 export interface MultiTabsSetting {
+  cache: boolean;
   // 是否展示标签页
   show: boolean;
   // 标签页快捷按钮
@@ -123,6 +126,8 @@ export interface TransitionSetting {
 }
 
 export interface ProjectConfig {
+  sessionTimeoutProcessing: any;
+  showDarkModeToggle: boolean;
   // Storage location of permission related information
   // 权限相关信息的存储位置
   permissionCacheType: CacheTypeEnum;

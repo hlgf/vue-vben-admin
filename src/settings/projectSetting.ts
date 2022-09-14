@@ -11,6 +11,7 @@ import {
 } from '/@/enums/appEnum';
 import { SIDE_BAR_BG_COLOR_LIST, HEADER_PRESET_BG_COLOR_LIST } from './designSetting';
 import { primaryColor } from '../../build/config/themeConfig';
+import { any } from 'vue-types';
 
 // ! You need to clear the browser cache after the change
 const setting: ProjectConfig = {
@@ -31,7 +32,7 @@ const setting: ProjectConfig = {
 
   // Session timeout processing
   sessionTimeoutProcessing: SessionTimeoutProcessingEnum.ROUTE_JUMP,
-
+  themeMode: any,
   // color
   themeColor: primaryColor,
 

@@ -1,6 +1,6 @@
 // Used to configure the general configuration of some components without modifying the components
 
-// import type { SorterResult } from '../components/Table';
+import type { SorterResult } from '../components/Table';
 
 export default {
   // basic-table setting
@@ -49,6 +49,7 @@ export default {
     },
     // Custom general filter function
     // 默认的过滤方法
+    // Partial(ts自带的语法)将所有的属性限制全部变成可选,
     defaultFilterFn: (data: Partial<Recordable<string[]>>) => {
       return data;
     },

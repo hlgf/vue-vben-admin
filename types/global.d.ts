@@ -32,6 +32,8 @@ declare global {
 
   declare type Nullable<T> = T | null;
   declare type NonNullable<T> = T extends null | undefined ? never : T;
+  //  Record(ts高级语法) 属性为string类型,属性值为any类型,
+  // Recordable 可以看成是一个对象,T可以看成是一个占位符,类似于参数,提供给Record,默认值为any
   declare type Recordable<T = any> = Record<string, T>;
   declare type ReadonlyRecordable<T = any> = {
     readonly [key: string]: T;

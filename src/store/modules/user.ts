@@ -26,6 +26,7 @@ interface UserState {
 }
 
 export const useUserStore = defineStore({
+  // id为该数据库的库名
   id: 'app-user',
   state: (): UserState => ({
     // user info
