@@ -3,6 +3,8 @@ export interface Cache<V = any> {
   // 值
   value?: V;
   // 计时器的ID
+  // ReturnType 由函数类型T的返回值类型构造一个类型
+  // typeof 能获取到setTimeout的所有类型的约束信息
   timeoutId?: ReturnType<typeof setTimeout>;
   // 过期时间毫秒值（new Date + alive）
   time?: number;
@@ -85,6 +87,7 @@ export class Memory<T = any, V = any> {
      * Maximum delay value 2,147,483,647 ms
      * https://developer.mozilla.org/en-US/docs/Web/API/setTimeout#maximum_delay_value
      */
+    // 设置的过期时间大于现在的时间
     item.time = expires > now ? expires : now + expires;
     item.timeoutId = setTimeout(
       () => {

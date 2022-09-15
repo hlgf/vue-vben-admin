@@ -160,6 +160,7 @@ function addToChildren(
 // 判断级别是否超过2级
 function isMultipleRoute(routeModule: AppRouteModule) {
   // Reflect.has 与 in 操作符 相同, 用于检查一个对象(包括它原型链上)是否拥有某个属性
+  // Reflect为对对象操作的方法的集合
   if (!routeModule || !Reflect.has(routeModule, 'children') || !routeModule.children?.length) {
     return false;
   }

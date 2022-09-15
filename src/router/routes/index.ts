@@ -17,6 +17,7 @@ Object.keys(modules).forEach((key) => {
   routeModuleList.push(...modList);
 });
 
+console.log('routeModuleList', routeModuleList);
 export const asyncRoutes = [PAGE_NOT_FOUND_ROUTE, ...routeModuleList];
 
 // 根路由

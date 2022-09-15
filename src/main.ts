@@ -1,5 +1,14 @@
+/*
+ * @Author: hlgf 944263044@qq.com
+ * @Date: 2022-09-13 08:09:58
+ * @LastEditors: hlgf 944263044@qq.com
+ * @LastEditTime: 2022-09-15 17:21:46
+ * @FilePath: \vue-vben-admin\src\main.ts
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
 import 'virtual:windi-base.css';
 import 'virtual:windi-components.css';
+// 进行了全局注入,其他地方引用里面的变量不再需要进行导入操作
 import '/@/design/index.less';
 import 'virtual:windi-utilities.css';
 // Register icon sprite

@@ -24,8 +24,10 @@ import { ThemeEnum } from '/@/enums/appEnum';
 
 // Initial project configuration
 export function initAppConfigStore() {
+  // 获取到store数据对象
   const localeStore = useLocaleStore();
   const appStore = useAppStore();
+  //
   let projCfg: ProjectConfig = Persistent.getLocal(PROJ_CFG_KEY) as ProjectConfig;
   projCfg = deepMerge(projectSetting, projCfg || {});
   const darkMode = appStore.getDarkMode;

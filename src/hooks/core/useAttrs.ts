@@ -18,6 +18,7 @@ export function useAttrs(params: Params = {}): Ref<Recordable> | {} {
   if (!instance) return {};
 
   const { excludeListeners = false, excludeKeys = [], excludeDefaultKeys = true } = params;
+  // 浅层ref,只对 .value 的访问是响应式的,性能更好
   const attrs = shallowRef({});
   const allExcludeKeys = excludeKeys.concat(excludeDefaultKeys ? DEFAULT_EXCLUDE_KEYS : []);
 
@@ -25,6 +26,8 @@ export function useAttrs(params: Params = {}): Ref<Recordable> | {} {
   instance.attrs = reactive(instance.attrs);
 
   watchEffect(() => {
+    // entries() 方法返回一个数组的迭代对象，该对象包含数组的键值对 (key/value)。
+    // 迭代对象中数组的索引值作为 key， 数组元素作为 value。
     const res = entries(instance.attrs).reduce((acm, [key, val]) => {
       if (!allExcludeKeys.includes(key) && !(excludeListeners && LISTENER_PREFIX.test(key))) {
         acm[key] = val;

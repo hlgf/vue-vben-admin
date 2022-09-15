@@ -1,5 +1,14 @@
+/*
+ * @Author: hlgf 944263044@qq.com
+ * @Date: 2022-09-13 08:09:58
+ * @LastEditors: hlgf 944263044@qq.com
+ * @LastEditTime: 2022-09-15 16:54:00
+ * @FilePath: \vue-vben-admin\build\vite\plugin\theme.ts
+ * @Description: 基本逻辑: 控制根元素的html的自定义属性和类名,
+ *  其中侧边栏和头部需要单独设置,因为可以受另一个设置进行颜色的设置,
+ *    侧边栏和头部的样式控制是通过css的原生变量 --搭配var来进行设置和控制,参考src\components\Application\src\AppDarkModeToggle.vue
+ */
 /**
- * Vite plugin for website theme color switching
  * https://github.com/anncwb/vite-plugin-theme
  */
 
@@ -24,6 +33,7 @@ export function configThemePlugin(isBuild: boolean): PluginOption[] {
   });
   const plugin = [
     viteThemePlugin({
+      // 自定义选择器转换
       resolveSelector: (s) => {
         s = s.trim();
         switch (s) {
@@ -55,6 +65,7 @@ export function configThemePlugin(isBuild: boolean): PluginOption[] {
       ],
       filter: (id) => (isBuild ? !id.endsWith('antd.less') : true),
       // extractCss: false,
+      // 注入全局变量
       darkModifyVars: {
         ...generateModifyVars(true),
         'text-color': '#c9d1d9',

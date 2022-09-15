@@ -1,3 +1,11 @@
+<!--
+ * @Author: hlgf 944263044@qq.com
+ * @Date: 2022-09-13 08:09:58
+ * @LastEditors: hlgf 944263044@qq.com
+ * @LastEditTime: 2022-09-15 16:59:14
+ * @FilePath: \vue-vben-admin\src\components\Tinymce\src\ImgUpload.vue
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
 <template>
   <div :class="[prefixCls, { fullscreen }]">
     <Upload
@@ -80,6 +88,7 @@
   });
 </script>
 <style lang="less" scoped>
+  // 定义prefix-cls
   @prefix-cls: ~'@{namespace}-tinymce-img-upload';
 
   .@{prefix-cls} {

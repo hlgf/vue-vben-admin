@@ -21,7 +21,7 @@
   import Icon from '/@/components/Icon/src/Icon.vue';
   import { buttonProps } from './props';
   import { useAttrs } from '/@/hooks/core/useAttrs';
-
+  // 获取到props中的值,可以进行结构却不丢失响应式
   const props = defineProps(buttonProps);
   // get component class
   const attrs = useAttrs({ excludeDefaultKeys: false });

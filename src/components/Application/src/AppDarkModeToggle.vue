@@ -1,4 +1,13 @@
+<!--
+ * @Author: hlgf 944263044@qq.com
+ * @Date: 2022-09-13 08:09:58
+ * @LastEditors: hlgf 944263044@qq.com
+ * @LastEditTime: 2022-09-15 16:49:43
+ * @FilePath: \vue-vben-admin\src\components\Application\src\AppDarkModeToggle.vue
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
 <template>
+  <!-- 暗黑模式的切换 -->
   <div v-if="getShowDarkModeToggle" :class="getClass" @click="toggleDarkMode">
     <div :class="`${prefixCls}-inner`"></div>
     <SvgIcon size="14" name="sun" />
@@ -28,15 +37,19 @@
 
   function toggleDarkMode() {
     const darkMode = getDarkMode.value === ThemeEnum.DARK ? ThemeEnum.LIGHT : ThemeEnum.DARK;
+    //更新store里面的参数信息
     setDarkMode(darkMode);
+    // 更改根元素的data-theme属性和类名
     updateDarkTheme(darkMode);
+    // 更新侧边栏和头部的信息
     updateHeaderBgColor();
+
     updateSidebarBgColor();
   }
 </script>
 <style lang="less" scoped>
   @prefix-cls: ~'@{namespace}-dark-switch';
-
+  // className[arrtibute] 属性选择器
   html[data-theme='dark'] {
     .@{prefix-cls} {
       border: 1px solid rgb(196 188 188);

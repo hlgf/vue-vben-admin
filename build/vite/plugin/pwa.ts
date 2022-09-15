@@ -8,6 +8,7 @@ export function configPwaConfig(env: ViteEnv) {
   const { VITE_USE_PWA, VITE_GLOB_APP_TITLE, VITE_GLOB_APP_SHORT_NAME } = env;
 
   if (VITE_USE_PWA) {
+    console.log('注入了pwa');
     // vite-plugin-pwa
     const pwaPlugin = VitePWA({
       manifest: {

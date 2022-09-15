@@ -34,6 +34,7 @@ module.exports = {
     'subject-empty': [2, 'never'],
     'type-empty': [2, 'never'],
     'subject-case': [0],
+    // 必须要以以下枚举中类型的一个开头作为上传描述
     'type-enum': [
       2,
       'always',

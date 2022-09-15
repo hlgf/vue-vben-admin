@@ -7,6 +7,7 @@ import type {
   PropType as VuePropType,
 } from 'vue';
 
+// 全局的声明,可以直接使用,不需要进行导入
 declare global {
   const __APP_INFO__: {
     pkg: {

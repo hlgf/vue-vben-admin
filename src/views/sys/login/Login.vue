@@ -75,7 +75,8 @@
   const title = computed(() => globSetting?.title ?? '');
 </script>
 <style lang="less">
-  @prefix-cls: ~'@{namespace}-login';
+  // namespace在E:\example\vue-vben-admin\src\design\var\index.less有定义
+  @prefix-cls: ~'@{namespace2}-login';
   @logo-prefix-cls: ~'@{namespace}-app-logo';
   @countdown-prefix-cls: ~'@{namespace}-countdown-input';
   @dark-bg: #293146;

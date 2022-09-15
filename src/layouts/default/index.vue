@@ -42,6 +42,7 @@
       Layout,
     },
     setup() {
+      // 会通过provide注入该属性,且返回一个reactive对象
       const { prefixCls } = useDesign('default-layout');
       const { getIsMobile } = useAppInject();
       const { getShowFullHeaderRef } = useHeaderSetting();
